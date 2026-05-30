@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>WriteRight — Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#0e0e10;--ink2:#3a3a45;--ink3:#7a7a8a;
+  --cream:#faf8f4;--surface:#fff;--border:#e8e6e0;
+  --accent:#ff6b35;--blue:#1a6bff;--green:#00b894;
+  --red:#e84545;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+
+/* ---- LOGO ---- */
+.logo{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--ink);letter-spacing:-1px;margin-bottom:6px;text-align:center}
+.logo span{color:var(--accent)}
+.tagline{font-size:13px;color:var(--ink3);text-align:center;margin-bottom:32px}
+
+/* ---- CARD ---- */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 24px;width:100%;max-width:380px;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
+
+/* ---- TABS ---- */
+.tabs{display:flex;background:var(--cream);border-radius:10px;padding:4px;margin-bottom:22px;gap:4px}
+.tab{flex:1;padding:8px;font-size:13px;font-weight:500;color:var(--ink3);background:none;border:none;border-radius:8px;cursor:pointer;transition:all 0.15s}
+.tab.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+
+/* ---- FORM ---- */
+.section{display:none}.section.active{display:block}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;font-weight:500;color:var(--ink2);margin-bottom:5px;letter-spacing:0.02em}
+.field input{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--cream);outline:none;transition:border-color 0.15s}
+.field input:focus{border-color:var(--accent);background:#fff}
+
+.btn{width:100%;padding:12px;border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.15s;margin-top:4px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+.btn-outline{background:none;border:1.5px solid var(--border);color:var(--ink2);margin-top:8px}
+.btn-outline:hover{border-color:var(--ink);color:var(--ink)}
+
+/* ---- ALERTS ---- */
+.alert{padding:10px 13px;border-radius:10px;font-size:13px;margin-bottom:14px;display:none}
+.alert.show{display:block}
+.alert-err{background:#fff0f0;border:1px solid #ffc4c4;color:var(--red)}
+.alert-ok{background:#e8fff6;border:1px solid #9fe1cb;color:#0f6e56}
+.alert-warn{background:#fff8e6;border:1px solid #fac775;color:#854f0b}
+
+/* ---- PAYMENT BOX ---- */
+.pay-box{background:var(--cream);border:1.5px dashed var(--border);border-radius:12px;padding:16px;text-align:center;margin-bottom:16px}
+.pay-amount{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--accent);line-height:1}
+.pay-label{font-size:12px;color:var(--ink3);margin-top:2px}
+.pay-upi{font-size:13px;color:var(--ink2);margin-top:10px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-weight:500;letter-spacing:0.02em}
+.pay-note{font-size:11px;color:var(--ink3);margin-top:8px;line-height:1.5}
+
+/* ---- ADMIN ---- */
+.admin-lock{text-align:center;padding:8px 0 16px}
+.admin-lock p{font-size:12px;color:var(--ink3);margin-bottom:12px}
+.divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+.users-list{max-height:180px;overflow-y:auto;margin-bottom:14px}
+.user-item{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:var(--cream);border-radius:8px;margin-bottom:4px;font-size:12px}
+.user-item span{color:var(--ink2)}
+.del-btn{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:14px;padding:2px 6px;border-radius:4px}
+.del-btn:hover{background:#fff0f0;color:var(--red)}
+.badge{font-size:10px;padding:2px 7px;border-radius:5px;font-weight:600;margin-left:6px}
+.badge-active{background:#e8fff6;color:#0f6e56}
+.badge-pending{background:#fff8e6;color:#854f0b}
+
+.footer-note{font-size:11px;color:var(--ink3);text-align:center;margin-top:20px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="logo">Write<span>Right</span></div>
+<p class="tagline">Class XII English Board 2026–27 · GNCT Delhi</p>
+
+<div class="card">
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('login')">🔐 Login</button>
+    <button class="tab" onclick="showTab('buy')">💳 ₹99 Kharido</button>
+    <button class="tab" onclick="showTab('admin')">⚙️ Admin</button>
+  </div>
+
+  <!-- ===== LOGIN SECTION ===== -->
+  <div class="section active" id="sec-login">
+    <div class="alert alert-err" id="login-err"></div>
+    <div class="alert alert-ok" id="login-ok"></div>
+    <div class="field">
+      <label>USERNAME</label>
+      <input type="text" id="l-user" placeholder="apna username daalo" autocomplete="username">
+    </div>
+    <div class="field">
+      <label>PASSWORD</label>
+      <input type="password" id="l-pass" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <button class="btn btn-primary" onclick="doLogin()">Login karein →</button>
+    <button class="btn btn-outline" onclick="showTab('buy')">Abhi tak account nahi? ₹99 mein lo</button>
+  </div>
+
+  <!-- ===== BUY SECTION ===== -->
+  <div class="section" id="sec-buy">
+    <div class="pay-box">
+      <div class="pay-amount">₹99</div>
+      <div class="pay-label">Lifetime Access · WriteRight Class XII</div>
+      <div class="pay-upi">UPI ID: <strong id="upi-display">yourname@upi</strong></div>
+      <div class="pay-note">Payment karne ke baad neeche apna naam aur UPI transaction ID bhejein.<br>Aapko 24 ghante mein login details WhatsApp/message pe milegi.</div>
+    </div>
+    <div class="alert alert-warn" id="buy-err"></div>
+    <div class="alert alert-ok" id="buy-ok"></div>
+    <div class="field">
+      <label>AAPKA NAAM</label>
+      <input type="text" id="b-name" placeholder="Jaise: Priya Sharma">
+    </div>
+    <div class="field">
+      <label>MOBILE NUMBER</label>
+      <input type="tel" id="b-mobile" placeholder="98XXXXXXXX">
+    </div>
+    <div class="field">
+      <label>UPI TRANSACTION ID</label>
+      <input type="text" id="b-txn" placeholder="Jaise: 4238XXXXXXX">
+    </div>
+    <button class="btn btn-primary" onclick="submitPayment()">Payment confirm karein ✓</button>
+  </div>
+
+  <!-- ===== ADMIN SECTION ===== -->
+  <div class="section" id="sec-admin">
+    <div class="admin-lock" id="admin-lock-view">
+      <p>Admin password daalo</p>
+      <div class="field">
+        <input type="password" id="admin-pass" placeholder="Admin password" autocomplete="off">
+      </div>
+      <button class="btn btn-primary" onclick="adminLogin()">Admin Login →</button>
+    </div>
+    <div id="admin-panel" style="display:none">
+      <div class="alert alert-ok" id="admin-msg"></div>
+
+      <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px">Naya User Banao</p>
+      <div class="field">
+        <label>USERNAME</label>
+        <input type="text" id="a-user" placeholder="student ka username">
+      </div>
+      <div class="field">
+        <label>PASSWORD</label>
+        <input type="text" id="a-pass" placeholder="password set karo">
+      </div>
+      <button class="btn btn-primary" onclick="createUser()">User Banao +</button>
+
+      <hr class="divider">
+      <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px">Active Users (<span id="user-count">0</span>)</p>
+      <div class="users-list" id="users-list"></div>
+
+      <hr class="divider">
+      <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px">Payment Requests (<span id="req-count">0</span>)</p>
+      <div class="users-list" id="req-list"></div>
+
+      <hr class="divider">
+      <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px">Settings</p>
+      <div class="field">
+        <label>UPI ID (students ko dikhega)</label>
+        <input type="text" id="set-upi" placeholder="yourname@paytm">
+      </div>
+      <div class="field">
+        <label>ADMIN PASSWORD BADLO</label>
+        <input type="password" id="set-newpass" placeholder="naya password">
+      </div>
+      <button class="btn btn-outline" onclick="saveSettings()">Settings Save Karo</button>
+      <button class="btn btn-outline" style="margin-top:6px;color:var(--red);border-color:#ffc4c4" onclick="adminLogout()">Admin Logout</button>
+    </div>
+  </div>
+</div>
+
+<p class="footer-note">
+  Content sirf paid users ke liye hai.<br>
+  Problem ho toh WhatsApp karo.
+</p>
+
+<script>
+// =============================================
+// SIMPLE HASH (not cryptographic, just obfuscation)
+// =============================================
+function simpleHash(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return hash.toString(36);
+}
+
+// =============================================
+// STORAGE HELPERS
+// =============================================
+function getUsers() {
+  try { return JSON.parse(localStorage.getItem('wr_users') || '{}'); } catch(e) { return {}; }
+}
+function saveUsers(u) { localStorage.setItem('wr_users', JSON.stringify(u)); }
+
+function getRequests() {
+  try { return JSON.parse(localStorage.getItem('wr_requests') || '[]'); } catch(e) { return []; }
+}
+function saveRequests(r) { localStorage.setItem('wr_requests', JSON.stringify(r)); }
+
+function getAdminPass() {
+  return localStorage.getItem('wr_admin') || simpleHash('admin123');
+}
+function getUPI() {
+  return localStorage.getItem('wr_upi') || 'yourname@upi';
+}
+
+// =============================================
+// INIT
+// =============================================
+document.getElementById('upi-display').textContent = getUPI();
+
+// Check if already logged in
+(function checkSession() {
+  const sess = sessionStorage.getItem('wr_loggedin');
+  if (sess) {
+    window.location.href = 'english_creative_writing_class12_updated.html';
+  }
+})();
+
+// =============================================
+// TAB SWITCHING
+// =============================================
+function showTab(tab) {
+  document.querySelectorAll('.tab').forEach((t,i) => {
+    t.classList.toggle('active', ['login','buy','admin'][i] === tab);
+  });
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('sec-' + tab).classList.add('active');
+}
+
+// =============================================
+// LOGIN
+// =============================================
+function showAlert(id, msg, show) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  el.classList.toggle('show', show);
+}
+
+function doLogin() {
+  const user = document.getElementById('l-user').value.trim().toLowerCase();
+  const pass = document.getElementById('l-pass').value;
+  showAlert('login-err', '', false);
+  showAlert('login-ok', '', false);
+
+  if (!user || !pass) {
+    showAlert('login-err', 'Username aur password dono zaroori hain.', true);
+    return;
+  }
+
+  const users = getUsers();
+  const hashed = simpleHash(pass);
+
+  if (users[user] && users[user].pass === hashed) {
+    showAlert('login-ok', 'Login successful! Content load ho raha hai...', true);
+    sessionStorage.setItem('wr_loggedin', user);
+    setTimeout(() => {
+      window.location.href = 'english_creative_writing_class12_updated.html';
+    }, 800);
+  } else {
+    showAlert('login-err', 'Galat username ya password. Dobara try karo.', true);
+  }
+}
+
+// Enter key support
+document.getElementById('l-pass').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+document.getElementById('l-user').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('l-pass').focus();
+});
+
+// =============================================
+// BUY / PAYMENT REQUEST
+// =============================================
+function submitPayment() {
+  const name = document.getElementById('b-name').value.trim();
+  const mobile = document.getElementById('b-mobile').value.trim();
+  const txn = document.getElementById('b-txn').value.trim();
+  showAlert('buy-err', '', false);
+  showAlert('buy-ok', '', false);
+
+  if (!name || !mobile || !txn) {
+    showAlert('buy-err', 'Teeno fields bharni zaroori hain.', true);
+    return;
+  }
+  if (mobile.length < 10) {
+    showAlert('buy-err', 'Sahi mobile number daalo.', true);
+    return;
+  }
+
+  const reqs = getRequests();
+  reqs.push({ name, mobile, txn, time: new Date().toLocaleString('hi-IN') });
+  saveRequests(reqs);
+
+  showAlert('buy-ok', `✓ Request submit ho gayi, ${name}! 24 ghante mein aapko ${mobile} pe login details milegi.`, true);
+  document.getElementById('b-name').value = '';
+  document.getElementById('b-mobile').value = '';
+  document.getElementById('b-txn').value = '';
+}
+
+// =============================================
+// ADMIN
+// =============================================
+let adminUnlocked = false;
+
+function adminLogin() {
+  const pass = document.getElementById('admin-pass').value;
+  if (simpleHash(pass) === getAdminPass()) {
+    adminUnlocked = true;
+    document.getElementById('admin-lock-view').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    document.getElementById('set-upi').value = getUPI();
+    renderUsers();
+    renderRequests();
+  } else {
+    alert('Galat admin password!');
+  }
+}
+
+function adminLogout() {
+  adminUnlocked = false;
+  document.getElementById('admin-lock-view').style.display = 'block';
+  document.getElementById('admin-panel').style.display = 'none';
+  document.getElementById('admin-pass').value = '';
+}
+
+function createUser() {
+  if (!adminUnlocked) return;
+  const user = document.getElementById('a-user').value.trim().toLowerCase();
+  const pass = document.getElementById('a-pass').value.trim();
+
+  if (!user || !pass) {
+    showAlert('admin-msg', '❌ Username aur password dono bharo.', true);
+    document.getElementById('admin-msg').className = 'alert alert-err show';
+    return;
+  }
+
+  const users = getUsers();
+  users[user] = { pass: simpleHash(pass), created: new Date().toLocaleDateString('hi-IN') };
+  saveUsers(users);
+  document.getElementById('a-user').value = '';
+  document.getElementById('a-pass').value = '';
+  showAlert('admin-msg', `✓ User "${user}" ban gaya!`, true);
+  document.getElementById('admin-msg').className = 'alert alert-ok show';
+  renderUsers();
+}
+
+function deleteUser(user) {
+  if (!confirm(`"${user}" ko delete karein?`)) return;
+  const users = getUsers();
+  delete users[user];
+  saveUsers(users);
+  renderUsers();
+}
+
+function renderUsers() {
+  const users = getUsers();
+  const keys = Object.keys(users);
+  document.getElementById('user-count').textContent = keys.length;
+  const list = document.getElementById('users-list');
+  if (keys.length === 0) {
+    list.innerHTML = '<p style="font-size:12px;color:var(--ink3);padding:8px">Abhi koi user nahi hai.</p>';
+    return;
+  }
+  list.innerHTML = keys.map(u => `
+    <div class="user-item">
+      <span>👤 ${u} <span class="badge badge-active">Active</span></span>
+      <button class="del-btn" onclick="deleteUser('${u}')">✕</button>
+    </div>
+  `).join('');
+}
+
+function renderRequests() {
+  const reqs = getRequests();
+  document.getElementById('req-count').textContent = reqs.length;
+  const list = document.getElementById('req-list');
+  if (reqs.length === 0) {
+    list.innerHTML = '<p style="font-size:12px;color:var(--ink3);padding:8px">Koi pending request nahi.</p>';
+    return;
+  }
+  list.innerHTML = reqs.map((r, i) => `
+    <div class="user-item" style="flex-direction:column;align-items:flex-start;gap:3px">
+      <span style="font-weight:500">📱 ${r.name} — ${r.mobile}</span>
+      <span style="color:var(--ink3)">TXN: ${r.txn}</span>
+      <span style="color:var(--ink3);font-size:10px">${r.time}</span>
+      <button class="del-btn" style="align-self:flex-end;margin-top:-20px" onclick="deleteRequest(${i})">✕ Done</button>
+    </div>
+  `).join('');
+}
+
+function deleteRequest(i) {
+  const reqs = getRequests();
+  reqs.splice(i, 1);
+  saveRequests(reqs);
+  renderRequests();
+}
+
+function saveSettings() {
+  const upi = document.getElementById('set-upi').value.trim();
+  const newpass = document.getElementById('set-newpass').value.trim();
+  if (upi) {
+    localStorage.setItem('wr_upi', upi);
+    document.getElementById('upi-display').textContent = upi;
+  }
+  if (newpass) {
+    localStorage.setItem('wr_admin', simpleHash(newpass));
+  }
+  showAlert('admin-msg', '✓ Settings save ho gayi!', true);
+  document.getElementById('admin-msg').className = 'alert alert-ok show';
+  document.getElementById('set-newpass').value = '';
+}
+</script>
+</body>
+</html>

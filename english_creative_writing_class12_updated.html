@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>English Creative Writing · Class 12 Board 2026-27</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0e0e10;
+  --ink2: #3a3a45;
+  --ink3: #7a7a8a;
+  --cream: #faf8f4;
+  --surface: #ffffff;
+  --border: #e8e6e0;
+  --accent1: #ff6b35;
+  --accent2: #1a6bff;
+  --accent3: #00b894;
+  --accent4: #a855f7;
+  --accent5: #f59e0b;
+  --notice-c: #ff6b35;
+  --invite-c: #a855f7;
+  --letter-c: #1a6bff;
+  --article-c: #00b894;
+  --report-c: #f59e0b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,248,244,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 16px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+}
+.nav-logo span { color: var(--accent1); }
+.nav-badge {
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 36px 20px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,107,53,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink2);
+  margin-bottom: 16px;
+}
+.chip-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent3);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.6; transform:scale(1.3); }
+}
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 7vw, 38px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.hero h1 em { font-style: normal; color: var(--accent1); }
+.hero p {
+  font-size: 14px;
+  color: var(--ink3);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 22px;
+}
+.marks-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.marks-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 12px;
+}
+.marks-pill strong { font-size: 15px; font-family: 'Syne', sans-serif; }
+
+/* ===== TOPIC NAV PILLS ===== */
+.topic-scroll {
+  overflow-x: auto;
+  padding: 0 16px 14px;
+  display: flex;
+  gap: 8px;
+  scrollbar-width: none;
+}
+.topic-scroll::-webkit-scrollbar { display: none; }
+.tpill {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 22px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all 0.18s;
+  text-decoration: none;
+}
+.tpill:hover { border-color: var(--ink); color: var(--ink); }
+.tpill.active { color: var(--surface) !important; border-color: transparent; }
+
+/* ===== SECTION DIVIDER ===== */
+.section-wrap { padding: 0 16px; margin-bottom: 40px; }
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.sec-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.section-head h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.section-head p { font-size: 12px; color: var(--ink3); margin-top: 1px; }
+
+/* ===== FORMAT CARD ===== */
+.format-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.format-header {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+.fh-left { display: flex; align-items: center; gap: 10px; }
+.fh-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+.format-header h3 { font-size: 15px; font-weight: 600; color: var(--ink); }
+.format-header small { font-size: 11px; color: var(--ink3); display: block; margin-top: 1px; }
+.chevron {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.format-card.open .chevron { transform: rotate(180deg); }
+
+.format-body {
+  display: none;
+  border-top: 1px solid var(--border);
+}
+.format-card.open .format-body { display: block; }
+
+/* ===== TABS INSIDE CARD ===== */
+.inner-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.inner-tabs::-webkit-scrollbar { display: none; }
+.itab {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink3);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.itab.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+.tab-content { display: none; padding: 16px; }
+.tab-content.active { display: block; }
+
+/* ===== FORMAT STEPS ===== */
+.steps-list { list-style: none; }
+.steps-list li {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+.steps-list li:last-child { border-bottom: none; }
+.step-num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.tip-box-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+@media(max-width:380px){ .tip-box-grid { grid-template-columns: 1fr; } }
+.tip-box {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.tip-box h4 { font-size: 11px; font-weight: 600; margin-bottom: 3px; color: var(--ink); }
+.tip-box p { font-size: 12px; color: var(--ink2); line-height: 1.55; }
+
+/* ===== Q&A CARDS ===== */
+.qa-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.qa-q {
+  padding: 13px 15px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+  user-select: none;
+}
+.qa-qbadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #ffe5d9;
+  color: var(--accent1);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.qa-q p { font-size: 13px; font-weight: 500; line-height: 1.55; color: var(--ink); flex: 1; }
+.qa-toggle {
+  font-size: 16px;
+  flex-shrink: 0;
+  color: var(--ink3);
+  transition: transform 0.2s;
+  margin-top: -1px;
+}
+.qa-card.open .qa-toggle { transform: rotate(45deg); }
+.qa-ans {
+  display: none;
+  padding: 0 15px 15px;
+  border-top: 1px dashed var(--border);
+  margin-top: 0;
+}
+.qa-ans-inner {
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 12px;
+}
+.qa-ans-inner p, .qa-ans-inner li {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink2);
+}
+.qa-ans-inner ul { padding-left: 16px; margin-top: 4px; }
+.qa-ans-inner li { margin-bottom: 3px; }
+.qa-card.open .qa-ans { display: block; }
+.ans-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent3);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.sample-box {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 10px;
+  font-family: 'DM Sans', monospace;
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--ink);
+  white-space: pre-wrap;
+}
+.sample-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent2);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+.year-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #e8f0ff;
+  color: var(--accent2);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ===== MARKS SUMMARY BAR ===== */
+.marks-overview {
+  background: var(--ink);
+  border-radius: 18px;
+  padding: 20px 18px;
+  margin: 0 16px 32px;
+  color: var(--surface);
+}
+.marks-overview h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.mbar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.mbar-row:last-child { margin-bottom: 0; }
+.mbar-label { font-size: 12px; width: 120px; flex-shrink: 0; opacity: 0.85; }
+.mbar-track { flex: 1; background: rgba(255,255,255,0.1); border-radius: 4px; height: 6px; }
+.mbar-fill { height: 6px; border-radius: 4px; }
+.mbar-val { font-size: 12px; font-weight: 600; min-width: 28px; text-align: right; opacity: 0.9; }
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 24px 20px 32px;
+  font-size: 12px;
+  color: var(--ink3);
+  border-top: 1px solid var(--border);
+}
+footer strong { color: var(--ink); }
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTop {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--surface);
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 99;
+  transition: transform 0.15s;
+}
+#scrollTop:hover { transform: scale(1.1); }
+#scrollTop.show { display: flex; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Write<span>Right</span></div>
+  <span class="nav-badge">CLASS XII · 2026–27</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-chip">
+    <span class="chip-dot"></span>
+    CBSE Board Exam Ready · Section B
+  </div>
+  <h1>Creative<br><em>Writing</em><br>Skills</h1>
+  <p>Class 12 English Core (Code-301) ke sabhi writing formats — easy language mein, board exam ke asli questions ke saath.</p>
+  <div class="marks-row">
+    <div class="marks-pill"><strong>18</strong> <span style="color:var(--ink3);font-size:12px">Marks</span></div>
+    <div class="marks-pill"><strong>5</strong> <span style="color:var(--ink3);font-size:12px">Formats</span></div>
+    <div class="marks-pill"><strong>20+</strong> <span style="color:var(--ink3);font-size:12px">Q&amp;A</span></div>
+  </div>
+</div>
+
+<!-- QUICK NAV PILLS -->
+<div class="topic-scroll">
+  <a href="#notice" class="tpill active" style="--tc:var(--notice-c)" onclick="setActive(this)">📋 Notice</a>
+  <a href="#invitation" class="tpill" onclick="setActive(this)">💌 Invitation</a>
+  <a href="#letter" class="tpill" onclick="setActive(this)">✉️ Letter</a>
+  <a href="#article" class="tpill" onclick="setActive(this)">📰 Article</a>
+  <a href="#report" class="tpill" onclick="setActive(this)">📊 Report</a>
+</div>
+
+<!-- MARKS OVERVIEW -->
+<div class="marks-overview">
+  <h3>Section B — Total 18 Marks</h3>
+  <div class="mbar-row">
+    <span class="mbar-label">Short Composition</span>
+    <div class="mbar-track"><div class="mbar-fill" style="width:28%;background:var(--notice-c)"></div></div>
+    <span class="mbar-val">~5 M</span>
+  </div>
+  <div class="mbar-row">
+    <span class="mbar-label">Letter Writing</span>
+    <div class="mbar-track"><div class="mbar-fill" style="width:33%;background:var(--letter-c)"></div></div>
+    <span class="mbar-val">~6 M</span>
+  </div>
+  <div class="mbar-row">
+    <span class="mbar-label">Article Writing</span>
+    <div class="mbar-track"><div class="mbar-fill" style="width:22%;background:var(--article-c)"></div></div>
+    <span class="mbar-val">~4 M</span>
+  </div>
+  <div class="mbar-row">
+    <span class="mbar-label">Report Writing</span>
+    <div class="mbar-track"><div class="mbar-fill" style="width:17%;background:var(--report-c)"></div></div>
+    <span class="mbar-val">~3 M</span>
+  </div>
+  <p style="font-size:11px;margin-top:12px;opacity:0.6;line-height:1.6">⚠️ Yeh marks approximate hain — CBSE officially per-format marks fixed nahi karta. Distribution paper ke hisaab se badal sakti hai. Sab formats equally ache se prepare karo.</p>
+</div>
+
+
+<!-- =================== NOTICE WRITING =================== -->
+<div class="section-wrap" id="notice">
+  <div class="section-head">
+    <div class="sec-icon" style="background:#fff3ee;font-size:20px">📋</div>
+    <div>
+      <h2 style="color:var(--notice-c)">Notice Writing</h2>
+      <p>Word limit: 50 words · Box mein likhein · Short Composition</p>
+    </div>
+  </div>
+
+  <!-- FORMAT ACCORDION -->
+  <div class="format-card" id="fc-notice">
+    <div class="format-header" onclick="toggleCard('fc-notice')">
+      <div class="fh-left">
+        <span class="fh-tag" style="background:#fff3ee;color:var(--notice-c)">FORMAT</span>
+        <div>
+          <h3>Notice ka Sahi Format</h3>
+          <small>Step-by-step samjho</small>
+        </div>
+      </div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="format-body">
+      <div class="inner-tabs">
+        <div class="itab active" onclick="switchTab(this,'notice','steps')">Steps</div>
+        <div class="itab" onclick="switchTab(this,'notice','tips')">Tips</div>
+        <div class="itab" onclick="switchTab(this,'notice','template')">Template</div>
+      </div>
+      <div class="tab-content active" id="notice-steps">
+        <ul class="steps-list">
+          <li><span class="step-num" style="background:#fff3ee;color:var(--notice-c)">1</span> <span><strong>Organisation ka naam</strong> — Bold, centre mein. Jaise: "The Lotus Valley School, Noida"</span></li>
+          <li><span class="step-num" style="background:#fff3ee;color:var(--notice-c)">2</span> <span><strong>NOTICE</strong> — Capital letters mein, centre-aligned, underline karo</span></li>
+          <li><span class="step-num" style="background:#fff3ee;color:var(--notice-c)">3</span> <span><strong>Date</strong> — Left side mein. Jaise: "15 July 2026"</span></li>
+          <li><span class="step-num" style="background:#fff3ee;color:var(--notice-c)">4</span> <span><strong>Heading</strong> — Catchy, underline karo. Jaise: "Annual Science Exhibition"</span></li>
+          <li><span class="step-num" style="background:#fff3ee;color:var(--notice-c)">5</span> <span><strong>Body</strong> — Who, What, When, Where, Why — sab 3-4 lines mein</span></li>
+          <li><span class="step-num" style="background:#fff3ee;color:var(--notice-c)">6</span> <span><strong>Naam + Designation</strong> — Neeche left mein. Jaise: "Priya Sharma, Head Girl"</span></li>
+        </ul>
+      </div>
+      <div class="tab-content" id="notice-tips">
+        <div class="tip-box-grid">
+          <div class="tip-box"><h4>📦 Box Zaroori</h4><p>Notice hamesha box ke andar likhein — yeh marks ke liye important hai.</p></div>
+          <div class="tip-box"><h4>🔢 50 Words</h4><p>"Up to 50 words" — yeh limit hai, minimum nahi. 40-50 words ideal hai. Ghabrao mat.</p></div>
+          <div class="tip-box"><h4>📅 Future Tense</h4><p>Aane wali event ke liye future tense use karein: "will be held"</p></div>
+          <div class="tip-box"><h4>❌ Avoid</h4><p>Short forms, casual language aur "I/We" avoid karein. Formal raho.</p></div>
+          <div class="tip-box"><h4>✅ Common Topics</h4><p>Sports day, lost & found, meeting, cultural event, school trip, vacancy</p></div>
+          <div class="tip-box"><h4>🎯 Marks</h4><p>Format ke 2 marks, content ke 1 mark — format pe dhyan do</p></div>
+        </div>
+      </div>
+      <div class="tab-content" id="notice-template">
+        <div class="sample-box">┌────────────────────────────────┐
+│    [Organisation ka Naam]      │
+│           NOTICE               │
+│                                │
+│ Date: DD Month YYYY            │
+│                                │
+│ [HEADING IN CAPITAL LETTERS]   │
+│                                │
+│ [Body: 3-4 lines. Date, time,  │
+│  venue, purpose clearly        │
+│  mention karein. Sabhi ko      │
+│  inform karein.]               │
+│                                │
+│ [Naam]                         │
+│ [Designation]                  │
+└────────────────────────────────┘</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q&A SECTION -->
+  <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 10px">Board Exam Questions</p>
+
+  <div class="qa-card" id="nq1">
+    <div class="qa-q" onclick="toggleQA('nq1')">
+      <span class="qa-qbadge">Q1</span>
+      <p>Aap apne school ke Cultural Club ke Secretary hain. Annual Cultural Fest "Rangotsav 2026" ke baare mein ek Notice likhein jo 20 January 2026 ko school hall mein hoga. <span class="year-badge">Board Style</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌────────────────────────────────────┐
+│    Delhi Public School, Dwarka     │
+│              NOTICE                │
+│                                    │
+│ Date: 10 January 2026              │
+│                                    │
+│   ANNUAL CULTURAL FEST — RANGOTSAV │
+│                                    │
+│ All students are hereby informed   │
+│ that our Annual Cultural Fest      │
+│ "Rangotsav 2026" will be held on   │
+│ 20 January 2026 in the School Hall │
+│ from 10:00 am onwards.             │
+│ Interested students may register   │
+│ their names with the undersigned   │
+│ by 15 January 2026.                │
+│                                    │
+│ Rahul Verma                        │
+│ Secretary, Cultural Club           │
+└────────────────────────────────────┘</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 <strong>Word count:</strong> ~48 words. Format perfect hai — box, heading, date, designation sab sahi jagah hain.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq2">
+    <div class="qa-q" onclick="toggleQA('nq2')">
+      <span class="qa-qbadge">Q2</span>
+      <p>Aapke school mein ek blue colour ki cycle lost ho gayi hai. Lost &amp; Found notice likhein. <span class="year-badge">2023 Style</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌────────────────────────────────┐
+│   Modern Public School, Delhi  │
+│          NOTICE                │
+│                                │
+│ Date: 5 March 2026             │
+│                                │
+│        LOST — BICYCLE          │
+│                                │
+│ A blue Atlas cycle (No. DL-04  │
+│ XY-1234) was lost from the     │
+│ school parking area on 4 March │
+│ 2026. Whosoever finds it,      │
+│ kindly contact the school      │
+│ office. A reward will be given.│
+│                                │
+│ Ananya Singh                   │
+│ Class XII-B                    │
+└────────────────────────────────┘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq3">
+    <div class="qa-q" onclick="toggleQA('nq3')">
+      <span class="qa-qbadge">Q3</span>
+      <p>School Eco Club ki taraf se "No Plastic Drive" ke liye notice likhein. Volunteers ki zaroorat hai. <span class="year-badge">New Pattern</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌─────────────────────────────────┐
+│  Kendriya Vidyalaya, Sector-5   │
+│            NOTICE               │
+│                                 │
+│ Date: 25 July 2026              │
+│                                 │
+│    VOLUNTEERS NEEDED —          │
+│      NO PLASTIC DRIVE           │
+│                                 │
+│ Our school Eco Club is          │
+│ organising a "No Plastic Drive" │
+│ on 5 August 2026. We require 20 │
+│ enthusiastic volunteers.        │
+│ Interested students of Class XI │
+│ and XII may register with the   │
+│ undersigned by 1 August 2026.   │
+│                                 │
+│ Meera Joshi                     │
+│ President, Eco Club             │
+└─────────────────────────────────┘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq4">
+    <div class="qa-q" onclick="toggleQA('nq4')">
+      <span class="qa-qbadge">Q4</span>
+      <p>Aap School Library ke In-charge hain. Students ko inform karein ki library 3 din ke liye band rahegi annual stock-taking ke liye. <span class="year-badge">Board Style</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌─────────────────────────────────┐
+│    St. Mary's School, Agra      │
+│            NOTICE               │
+│                                 │
+│ Date: 1 November 2026           │
+│                                 │
+│   LIBRARY CLOSED — STOCK TAKING │
+│                                 │
+│ All students are informed that  │
+│ the school library will remain  │
+│ closed from 5 to 7 November     │
+│ 2026 for annual stock-taking.   │
+│ Books already issued may be     │
+│ returned after 7 November.      │
+│ Inconvenience is regretted.     │
+│                                 │
+│ Sunita Rao                      │
+│ Librarian                       │
+└─────────────────────────────────┘</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 "Inconvenience is regretted" — yeh ek professional phrase hai jo notice mein zaroor likhein jab kuch band ho.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq5">
+    <div class="qa-q" onclick="toggleQA('nq5')">
+      <span class="qa-qbadge">Q5</span>
+      <p>School mein Inter-House Debate Competition hone wali hai. Participants ke liye notice likhein. <span class="year-badge">2024 Pattern</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌──────────────────────────────────┐
+│  Delhi Public School, Mathura Rd │
+│             NOTICE               │
+│                                  │
+│ Date: 10 September 2026          │
+│                                  │
+│  INTER-HOUSE DEBATE COMPETITION  │
+│                                  │
+│ Students of Classes XI and XII   │
+│ are invited to participate in    │
+│ the Inter-House Debate on        │
+│ "AI: More Harmful than Helpful?" │
+│ on 20 September 2026 in the      │
+│ school auditorium at 11:00 am.   │
+│ Register with your House Captain │
+│ by 15 September 2026.            │
+│                                  │
+│ Kavita Nair                      │
+│ Cultural Secretary               │
+└──────────────────────────────────┘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq6">
+    <div class="qa-q" onclick="toggleQA('nq6')">
+      <span class="qa-qbadge">Q6</span>
+      <p>School canteen mein price list change ho gayi hai. Students ko nayi rates ke baare mein inform karne ke liye notice likhein. <span class="year-badge">New 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌──────────────────────────────────┐
+│   Bal Bharati Public School      │
+│            NOTICE                │
+│                                  │
+│ Date: 3 August 2026              │
+│                                  │
+│   REVISED CANTEEN PRICE LIST     │
+│                                  │
+│ All students are informed that   │
+│ the canteen rates have been      │
+│ revised with effect from         │
+│ 10 August 2026 due to a rise in  │
+│ commodity prices. The updated    │
+│ price list is displayed on the   │
+│ canteen notice board. Students   │
+│ are requested to take note.      │
+│                                  │
+│ Rajesh Kumar                     │
+│ School Administrator             │
+└──────────────────────────────────┘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq7">
+    <div class="qa-q" onclick="toggleQA('nq7')">
+      <span class="qa-qbadge">Q7</span>
+      <p>School Annual Prize Distribution Ceremony ke liye parents ko bulane ka notice likhein. <span class="year-badge">Board 2022</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌──────────────────────────────────┐
+│   Ryan International School      │
+│            NOTICE                │
+│                                  │
+│ Date: 5 December 2026            │
+│                                  │
+│  ANNUAL PRIZE DISTRIBUTION       │
+│        CEREMONY 2026             │
+│                                  │
+│ Parents and guardians are        │
+│ cordially invited to the Annual  │
+│ Prize Distribution Ceremony on   │
+│ 20 December 2026 at 10:00 am in  │
+│ the school auditorium. Your      │
+│ presence will encourage and      │
+│ motivate the prize winners.      │
+│                                  │
+│ Mrs. Alka Sharma                 │
+│ Principal                        │
+└──────────────────────────────────┘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq8">
+    <div class="qa-q" onclick="toggleQA('nq8')">
+      <span class="qa-qbadge">Q8</span>
+      <p>School Swimming Team ke liye tryouts ho rahe hain. Interested students ke liye notice likhein. <span class="year-badge">Sports Theme</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌──────────────────────────────────┐
+│   Amity International School     │
+│            NOTICE                │
+│                                  │
+│ Date: 14 July 2026               │
+│                                  │
+│   SWIMMING TEAM TRYOUTS 2026     │
+│                                  │
+│ Tryouts for the school swimming  │
+│ team will be held on 25 July     │
+│ 2026 at the school pool from     │
+│ 7:00 am to 9:00 am. Students of  │
+│ Classes VI–XII who can swim are  │
+│ eligible. Bring your own kit.    │
+│ Register with the Sports Teacher │
+│ by 20 July 2026.                 │
+│                                  │
+│ Arjun Mehta                      │
+│ Sports Captain                   │
+└──────────────────────────────────┘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="nq9">
+    <div class="qa-q" onclick="toggleQA('nq9')">
+      <span class="qa-qbadge">Q9</span>
+      <p>School mein Blood Donation Camp lagaya ja raha hai. Students aur staff ke liye notice likhein. <span class="year-badge">Social Theme</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">┌──────────────────────────────────┐
+│   Kendriya Vidyalaya, Sector-8   │
+│            NOTICE                │
+│                                  │
+│ Date: 20 October 2026            │
+│                                  │
+│      BLOOD DONATION CAMP         │
+│                                  │
+│ In collaboration with Red Cross  │
+│ Society, a Blood Donation Camp   │
+│ will be organised on 1 November  │
+│ 2026 in the school hall from     │
+│ 9:00 am to 2:00 pm. Students     │
+│ above 18 years and staff members │
+│ are encouraged to donate. Prior  │
+│ registration is mandatory.       │
+│                                  │
+│ Dr. Priya Singh                  │
+│ Health & Wellness In-charge      │
+└──────────────────────────────────┘</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Age restriction mention karna — notice writing mein ek important detail hai jo marks dilata hai.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- =================== INVITATION =================== -->
+<div class="section-wrap" id="invitation">
+  <div class="section-head">
+    <div class="sec-icon" style="background:#f5eeff">💌</div>
+    <div>
+      <h2 style="color:var(--invite-c)">Invitation &amp; Reply</h2>
+      <p>Word limit: 50 words each · Formal ya Informal</p>
+    </div>
+  </div>
+
+  <div class="format-card" id="fc-invite">
+    <div class="format-header" onclick="toggleCard('fc-invite')">
+      <div class="fh-left">
+        <span class="fh-tag" style="background:#f5eeff;color:var(--invite-c)">FORMAT</span>
+        <div>
+          <h3>Invitation ke 2 Types</h3>
+          <small>Formal (3rd person) vs Informal (1st person)</small>
+        </div>
+      </div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="format-body">
+      <div class="inner-tabs">
+        <div class="itab active" onclick="switchTab(this,'invite','formal')">Formal</div>
+        <div class="itab" onclick="switchTab(this,'invite','informal')">Informal</div>
+        <div class="itab" onclick="switchTab(this,'invite','reply')">Reply karna</div>
+      </div>
+      <div class="tab-content active" id="invite-formal">
+        <ul class="steps-list">
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">1</span><span><strong>Third person</strong> mein likhein — "Mr. and Mrs. Sharma request the pleasure of your company..."</span></li>
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">2</span><span><strong>Occasion</strong> clearly mention karein — wedding, reception, anniversary etc.</span></li>
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">3</span><span><strong>Date, Time, Venue</strong> — neatly mention karein</span></li>
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">4</span><span><strong>RSVP</strong> — "RSVP: 9999999999" likhein neeche</span></li>
+        </ul>
+        <div class="sample-box">Mr. and Mrs. Rajesh Sharma
+request the pleasure of your company
+at the wedding reception of their daughter
+
+Priya
+
+with Mr. Arjun Mehta
+
+on Saturday, 14 February 2026
+at 7:00 pm
+
+Hotel Grand, Connaught Place, New Delhi
+
+RSVP: 9876543210</div>
+      </div>
+      <div class="tab-content" id="invite-informal">
+        <ul class="steps-list">
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">1</span><span><strong>First person</strong> mein — "Dear Sneha, I would love to invite you..."</span></li>
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">2</span><span>Friendly, warm tone rakho — jaise dost ko likh rahe ho</span></li>
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">3</span><span>Date, time, place clearly bolo</span></li>
+          <li><span class="step-num" style="background:#f5eeff;color:var(--invite-c)">4</span><span>"Do come!" ya "Looking forward to seeing you" se close karo</span></li>
+        </ul>
+        <div class="sample-box">15 January 2026
+
+Dear Ananya,
+
+I am so excited to invite you to my birthday party on 20 January 2026 at 6:00 pm at my home (A-45, Green Park, New Delhi). It would be so lovely to celebrate with you. Please do come!
+
+Yours lovingly,
+Riya</div>
+      </div>
+      <div class="tab-content" id="invite-reply">
+        <div class="tip-box-grid">
+          <div class="tip-box"><h4>✅ Accept karna</h4><p>Same tone mein thank karo. "We/I accept with great pleasure..." clearly likhein.</p></div>
+          <div class="tip-box"><h4>❌ Decline karna</h4><p>Wajah dijiye, regret express karein. "Regret that I am unable to attend due to..."</p></div>
+        </div>
+        <div class="sample-box" style="margin-top:10px">— Formal Accept —
+Mr. and Mrs. Vivek Gupta thank Mr. and Mrs. Rajesh Sharma for their kind invitation to the wedding reception of their daughter Priya on 14 February 2026 and have great pleasure in accepting the same.
+
+— Informal Decline —
+16 January 2026
+Dear Riya,
+Thank you so much for inviting me to your birthday party. Unfortunately, I have my tuition examination on that day and will not be able to attend. I am really sorry. Wishing you a very happy birthday!
+Yours,
+Ananya</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 10px">Board Exam Questions</p>
+
+  <div class="qa-card" id="iq1">
+    <div class="qa-q" onclick="toggleQA('iq1')">
+      <span class="qa-qbadge">Q1</span>
+      <p>Aap Arjun/Ananya hain. Apne dost Rahul ko apni sister ki shaadi mein informal invitation likhein. <span class="year-badge">Board Style</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">20 February 2026
+
+Dear Rahul,
+
+I am thrilled to share that my sister Neha is getting married on 5 March 2026 at Hotel Radiance, Noida at 7:00 pm. It would mean a lot to me if you could join us for this special occasion.
+
+Please do come!
+Your friend,
+Arjun</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Note: First person, friendly tone, date + venue + time — sab present hai.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="iq2">
+    <div class="qa-q" onclick="toggleQA('iq2')">
+      <span class="qa-qbadge">Q2</span>
+      <p>Upar wale invitation ka formal reply likhein — accept karte hue. <span class="year-badge">2024 Style</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">22 February 2026
+
+Dear Arjun,
+
+Thank you so much for inviting me to Neha didi's wedding! I am absolutely delighted to accept your invitation. I will definitely be there on 5 March at Hotel Radiance, Noida. Congratulations to the whole family!
+
+Your friend,
+Rahul</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="iq3">
+    <div class="qa-q" onclick="toggleQA('iq3')">
+      <span class="qa-qbadge">Q3</span>
+      <p>Aap apne Colony Residents' Welfare Association ki taraf se "Diwali Mela" ke liye formal invitation likhein neighbours ko. <span class="year-badge">Board 2023</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">The Members of
+Greenwood Colony Residents' Welfare Association
+request the pleasure of your company
+at the
+
+DIWALI MELA 2026
+
+on Saturday, 19 October 2026
+at 6:00 pm onwards
+
+Community Centre, Greenwood Colony
+Sector 14, Faridabad
+
+Games · Food Stalls · Cultural Performances
+
+RSVP: 9810001234</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Formal invitation mein "request the pleasure of your company" — yeh standard phrase hai, zaroor likhein.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="iq4">
+    <div class="qa-q" onclick="toggleQA('iq4')">
+      <span class="qa-qbadge">Q4</span>
+      <p>Upar wale Diwali Mela invitation ka formal reply likhein — decline karte hue (bahar shehar mein hain). <span class="year-badge">Decline Reply</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">Mr. and Mrs. Suresh Kapoor thank the Members of the Greenwood Colony Residents' Welfare Association for their kind invitation to the Diwali Mela on 19 October 2026, but regret their inability to attend as they will be out of town on that date. They wish the event great success.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Decline mein: Thank → Regret → Reason → Good Wishes — yeh 4 cheezein zaroori hain.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="iq5">
+    <div class="qa-q" onclick="toggleQA('iq5')">
+      <span class="qa-qbadge">Q5</span>
+      <p>Apni best friend Sneha ko apne farewell party mein informal invitation likhein — school chhootne ka dukh bhi express karein. <span class="year-badge">Emotional Context</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">10 March 2026
+
+Dear Sneha,
+
+Can you believe our school days are almost over? I am hosting a small farewell get-together at my place on 20 March 2026 at 5:00 pm — just our close group. It would mean the world to me if you came. Let us make one last beautiful memory together before we all go our separate ways.
+
+Please come! Love,
+Riya</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="iq6">
+    <div class="qa-q" onclick="toggleQA('iq6')">
+      <span class="qa-qbadge">Q6</span>
+      <p>Apne school ke Principal ko "Teachers' Day Celebration" ke liye formal invitation likhein Student Council ki taraf se. <span class="year-badge">Board Style</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">The Student Council of
+Lotus Valley International School
+requests the pleasure of the company of
+
+Dr. (Mrs.) Sunila Bhatia
+Principal
+
+at the
+
+TEACHERS' DAY CELEBRATION
+
+on Friday, 5 September 2026
+at 11:00 am
+
+School Auditorium, Lotus Valley International School
+Noida — 201301
+
+RSVP: Head Boy — 9999988888</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="iq7">
+    <div class="qa-q" onclick="toggleQA('iq7')">
+      <span class="qa-qbadge">Q7</span>
+      <p>Aapke cousin ne Class 12 mein 95% marks laaye. Use informal congratulatory letter likho aur celebration pe bulao. <span class="year-badge">Mixed Format</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">18 May 2026
+
+Dear Rohan,
+
+Congratulations! 95% in Class 12 — you have made the whole family so proud! Your hard work has truly paid off.
+
+I am throwing a small celebration at home on 25 May 2026 at 6:00 pm to honour your achievement. Mama and Papa would love to see you. Please come and bring Aunty and Uncle too!
+
+Can't wait to celebrate with you!
+Your cousin,
+Aditi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="iq8">
+    <div class="qa-q" onclick="toggleQA('iq8')">
+      <span class="qa-qbadge">Q8</span>
+      <p>Aapne ek friend ko birthday party pe bulaya tha. Usne accept kiya tha lekin last minute pe cancel kar diya. Reply mein politely disappoint hone ka express karein. <span class="year-badge">Tricky 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">15 August 2026
+
+Dear Pooja,
+
+Thank you for letting me know, though I must admit I am quite disappointed. I had been looking forward to celebrating with you and had saved your favourite seat! I completely understand that emergencies happen, and I hope everything is fine at your end.
+
+I missed you at the party. Let us plan a catch-up soon!
+
+Lots of love,
+Simran</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Yeh ek tricky informal reply hai — disappointment politely express karna, bina rude hue. Examiners ko yeh tone bahut pasand aata hai.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- =================== LETTER WRITING =================== -->
+<div class="section-wrap" id="letter">
+  <div class="section-head">
+    <div class="sec-icon" style="background:#eef3ff">✉️</div>
+    <div>
+      <h2 style="color:var(--letter-c)">Letter Writing</h2>
+      <p>120–150 words · Job Application ya Letter to Editor</p>
+    </div>
+  </div>
+
+  <div class="format-card" id="fc-letter">
+    <div class="format-header" onclick="toggleCard('fc-letter')">
+      <div class="fh-left">
+        <span class="fh-tag" style="background:#eef3ff;color:var(--letter-c)">FORMAT</span>
+        <div>
+          <h3>Letter ka Complete Format</h3>
+          <small>2 types: Job Application + Letter to Editor</small>
+        </div>
+      </div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="format-body">
+      <div class="inner-tabs">
+        <div class="itab active" onclick="switchTab(this,'letter','format')">Format</div>
+        <div class="itab" onclick="switchTab(this,'letter','job')">Job Letter</div>
+        <div class="itab" onclick="switchTab(this,'letter','biodata')">Bio-Data ⭐</div>
+        <div class="itab" onclick="switchTab(this,'letter','editor')">To Editor</div>
+        <div class="itab" onclick="switchTab(this,'letter','tips')">Key Tips</div>
+      </div>
+      <div class="tab-content active" id="letter-format">
+        <ul class="steps-list">
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">1</span><span><strong>Sender ka Address</strong> — Top left mein (apna address)</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">2</span><span><strong>Date</strong> — Address ke neeche</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">3</span><span><strong>Receiver ka Address</strong> — Editor/HR Manager ka naam + address</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">4</span><span><strong>Subject</strong> — 1 line mein, underline karo. "Subject: Application for..."</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">5</span><span><strong>Salutation</strong> — "Sir/Ma'am" ya "Respected Sir/Ma'am"</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">6</span><span><strong>Body</strong> — 3 paragraphs: Introduction → Main Points → Conclusion</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">7</span><span><strong>Closing</strong> — "Yours faithfully" ya "Yours sincerely" + Naam</span></li>
+        </ul>
+      </div>
+      <div class="tab-content" id="letter-job">
+        <div class="sample-box">A-12, Sector 15
+Noida — 201301
+15 June 2026
+
+The HR Manager
+Tech Solutions Ltd.
+Connaught Place, New Delhi — 110001
+
+Subject: Application for the Post of Junior Developer
+
+Respected Sir/Ma'am,
+
+With reference to your advertisement in The Hindu dated 10 June 2026, I wish to apply for the post of Junior Developer in your esteemed organisation.
+
+I am a graduate in Computer Science from Delhi University with 85% marks. I have good knowledge of Python, Java and Web Development. I am a quick learner and a team player.
+
+I am enclosing my bio-data for your kind perusal. I request you to give me an opportunity to prove my worth. I look forward to a positive response.
+
+Yours faithfully,
+Vikram Sharma
+
+── BIO-DATA ──────────────────────────
+Name         : Vikram Sharma
+Father's Name: Mr. Rajiv Sharma
+Date of Birth: 12 March 2005
+Education    : B.Sc (CS), 85% — Delhi Uni.
+Skills       : Python, Java, HTML/CSS
+Experience   : 6-month internship at ABC Tech
+References   : Available on request</div>
+      </div>
+      <div class="tab-content" id="letter-biodata">
+        <div style="background:#eef3ff;border-radius:10px;padding:10px 12px;margin-bottom:10px">
+          <p style="font-size:12px;color:var(--letter-c);font-weight:600;margin-bottom:4px">⭐ CBSE Syllabus mein clearly "Application for a Job with Bio-Data or Resume" likha hai</p>
+          <p style="font-size:12px;color:var(--ink2)">Bio-Data word count letter mein count <strong>nahi hota</strong> — alag se likhein. Letter + Bio-Data dono zaroori hain.</p>
+        </div>
+        <ul class="steps-list">
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">1</span><span><strong>Career Objective</strong> — 1-2 lines. Aap kya banna chahte ho, kyun is field mein aana chahte ho.</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">2</span><span><strong>Personal Details</strong> — Naam, DOB, Address, Contact, Email</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">3</span><span><strong>Educational Qualifications</strong> — Latest pehle. Class, School/College, % ya Grade</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">4</span><span><strong>Skills</strong> — Technical + Soft skills dono (e.g. MS Office, Communication, Leadership)</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">5</span><span><strong>Experience</strong> — Internship, volunteer work, projects (agar koi ho)</span></li>
+          <li><span class="step-num" style="background:#eef3ff;color:var(--letter-c)">6</span><span><strong>Declaration + Date + Signature</strong> — "I hereby declare that the above information is true..."</span></li>
+        </ul>
+        <div class="sample-box" style="margin-top:10px">── BIO-DATA ──────────────────────────────
+
+CAREER OBJECTIVE
+To obtain a position as a content writer where I can
+utilise my writing skills and creativity to contribute
+meaningfully to the organisation.
+
+PERSONAL DETAILS
+Name           : Nandini Kapoor
+Date of Birth  : 15 April 2005
+Address        : B-12, Pitampura, New Delhi — 110034
+Contact        : 9876543210
+Email          : nandini.kapoor@email.com
+
+EDUCATIONAL QUALIFICATIONS
+Class XII      : Commerce, 88% — DAV Public School (2025)
+Class X        : 91% — DAV Public School (2023)
+
+SKILLS
+Technical      : MS Word, MS Excel, Canva, Basic HTML
+Languages      : English (Fluent), Hindi (Native)
+Soft Skills    : Communication, Teamwork, Time Management
+
+EXPERIENCE
+Blog Writing   : Personal blog — 200+ articles (2023–present)
+Volunteer      : School Magazine Editor, Class XI–XII
+
+DECLARATION
+I hereby declare that all the above information is
+true and correct to the best of my knowledge.
+
+Date: 10 June 2026
+Place: New Delhi                          Nandini Kapoor</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Bio-Data mein Declaration <strong>zaroori</strong> hai — bina iske incomplete maana jaata hai. Declaration ke marks alag se milte hain.</p>
+      </div>
+
+      <div class="tab-content" id="letter-editor">
+        <div class="sample-box">B-7, Model Town
+New Delhi — 110009
+20 July 2026
+
+The Editor
+The Hindustan Times
+New Delhi — 110001
+
+Subject: Rising Problem of Water Scarcity in Delhi
+
+Respected Sir/Ma'am,
+
+Through the esteemed columns of your newspaper, I wish to draw the attention of the authorities towards the acute water scarcity being faced by residents of Model Town, New Delhi.
+
+For the past two months, the water supply has been irregular and insufficient. Many families, especially the elderly, face great difficulty. The underground water level is also falling rapidly. No action has been taken despite several complaints.
+
+I request the concerned authorities to take immediate action and ensure regular water supply. People's participation in water conservation should also be encouraged.
+
+Thanking you,
+Yours faithfully,
+Priya Nair</div>
+      </div>
+      <div class="tab-content" id="letter-tips">
+        <div class="tip-box-grid">
+          <div class="tip-box"><h4>🔑 Subject Line</h4><p>Subject hamesha underline karo. Ek line mein clearly purpose batao.</p></div>
+          <div class="tip-box"><h4>✉️ Closing</h4><p>"Yours faithfully" — jab receiver ka naam nahin pata. "Yours sincerely" — jab naam pata ho.</p></div>
+          <div class="tip-box"><h4>📏 Word Limit</h4><p>120–150 words strictly. Bio-data word count mein count nahin hota.</p></div>
+          <div class="tip-box"><h4>💼 Job Letter</h4><p>Apni qualification + skills highlight karo. Overconfident mat lago.</p></div>
+          <div class="tip-box"><h4>📰 Editor Letter</h4><p>Problem → Impact → Request — yeh 3 cheezein zaroor aani chahiye.</p></div>
+          <div class="tip-box"><h4>❌ Avoid</h4><p>Emotional language, too many adjectives, grammar mistakes avoid karo.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 10px">Board Exam Questions</p>
+
+  <div class="qa-card" id="lq1">
+    <div class="qa-q" onclick="toggleQA('lq1')">
+      <span class="qa-qbadge">Q1</span>
+      <p>Aapke mohalle mein stray dogs bahut badh gaye hain jo logon ko kaatne ki koshish karte hain. Municipal Corporation ko letter likhein. <span class="year-badge">Board 2023</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">C-45, Lajpat Nagar
+New Delhi — 110024
+10 August 2026
+
+The Commissioner
+South Delhi Municipal Corporation
+New Delhi — 110002
+
+Subject: Menace of Stray Dogs in Lajpat Nagar
+
+Respected Sir/Ma'am,
+
+I am writing to bring to your notice the increasing menace of stray dogs in our locality, Lajpat Nagar. These dogs roam freely in groups and have already bitten three children and an elderly woman in the past month.
+
+The situation has become alarming. Residents are afraid to go out in the evenings. Children cannot play in parks. Despite repeated complaints, no action has been taken by the authorities.
+
+I request you to immediately deploy a dog-catching team and arrange for the vaccination and sterilisation of these animals. Quick action will be greatly appreciated by the residents.
+
+Yours faithfully,
+Suresh Kumar</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq2">
+    <div class="qa-q" onclick="toggleQA('lq2')">
+      <span class="qa-qbadge">Q2</span>
+      <p>Aap ek sports journalist banna chahte hain. Times of India mein job ke liye application + bio-data likhein. <span class="year-badge">New Pattern</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">D-22, Vasant Vihar
+New Delhi — 110057
+5 September 2026
+
+The Editor
+The Times of India
+Bahadur Shah Zafar Marg
+New Delhi — 110002
+
+Subject: Application for the Post of Sports Journalist
+
+Respected Sir/Ma'am,
+
+With reference to your advertisement on your official website dated 1 September 2026, I wish to apply for the post of Sports Journalist in your esteemed publication.
+
+I am a graduate in Mass Communication from IP University with 78% marks. I have a keen interest in sports and have been writing for my college newsletter for two years. I am fluent in English and Hindi, and can work under deadlines.
+
+I am confident I will be an asset to your team. My bio-data is enclosed herewith. I humbly request you to grant me an interview at your convenience.
+
+Yours faithfully,
+Kavya Menon
+
+── BIO-DATA ──────────────────────────
+Name          : Kavya Menon
+DOB           : 5 July 2004
+Education     : B.A. Mass Communication, 78%
+                IP University, Delhi
+Skills        : News writing, Research, MS Office
+Experience    : 2 years — College Newsletter Editor
+Languages     : English, Hindi, Malayalam
+Email         : kavya.menon@email.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq3">
+    <div class="qa-q" onclick="toggleQA('lq3')">
+      <span class="qa-qbadge">Q3</span>
+      <p>Apne shehar mein badh rahe online fraud ke baare mein editor ko letter likhein. Suggestions bhi dein. <span class="year-badge">2024 Style</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">E-3, Rohini
+New Delhi — 110085
+12 October 2026
+
+The Editor
+The Indian Express
+New Delhi — 110001
+
+Subject: Rising Cases of Online Fraud — Need for Awareness
+
+Respected Sir/Ma'am,
+
+Through your esteemed newspaper, I wish to highlight the alarming rise in online fraud cases in our city. Every week, dozens of people — especially senior citizens — are losing their savings to cyber criminals pretending to be bank officials or government agents.
+
+The lack of digital literacy among older generations makes them easy targets. Despite police helplines, very few cases are resolved. The psychological trauma on victims is enormous.
+
+I request the government to launch mass awareness campaigns in schools and localities. Banks should also send regular alerts about common fraud methods. Only through awareness can we protect our citizens.
+
+Yours faithfully,
+Deepak Rao</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq4">
+    <div class="qa-q" onclick="toggleQA('lq4')">
+      <span class="qa-qbadge">Q4</span>
+      <p>Aapke colony mein park ki halat bahut kharab hai — toot phoot, gandagi. Municipal Corporation ke Commissioner ko letter likhein. <span class="year-badge">Board 2024</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">G-12, Mayur Vihar Phase-1
+New Delhi — 110091
+8 September 2026
+
+The Commissioner
+East Delhi Municipal Corporation
+New Delhi — 110032
+
+Subject: Deplorable Condition of Community Park in Mayur Vihar
+
+Respected Sir/Ma'am,
+
+I am writing to bring to your attention the extremely poor condition of the community park in our colony, Mayur Vihar Phase-1. The park, which was once a peaceful space for children and senior citizens, has fallen into complete disrepair.
+
+The benches are broken, the jogging track is cracked, and garbage is piling up near the entrance due to lack of regular cleaning. Children are forced to play near the garbage dumps, which poses serious health risks.
+
+I request you to kindly depute a team to inspect and restore the park at the earliest. Regular cleaning and maintenance should also be ensured. We hope for swift action.
+
+Yours faithfully,
+Seema Malhotra</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq5">
+    <div class="qa-q" onclick="toggleQA('lq5')">
+      <span class="qa-qbadge">Q5</span>
+      <p>Aap ek graphic designer banna chahte hain. Ek advertising agency mein internship ke liye application with bio-data likhein. <span class="year-badge">Creative Field</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">B-7, Laxmi Nagar
+New Delhi — 110092
+1 June 2026
+
+The Creative Director
+Spark Advertising Pvt. Ltd.
+Connaught Place, New Delhi — 110001
+
+Subject: Application for Summer Internship — Graphic Design
+
+Respected Sir/Ma'am,
+
+I am writing to apply for the summer internship in Graphic Design at your esteemed organisation. I am currently in Class XII at Delhi Public School and have a strong passion for visual communication and design.
+
+I have completed an online certification in Adobe Photoshop and Illustrator, and have designed posters and social media graphics for my school events. I am creative, detail-oriented and eager to learn from industry professionals.
+
+I believe this internship will give me invaluable exposure to real-world design projects. I have enclosed my bio-data and portfolio link for your review. I would be grateful for this opportunity.
+
+Yours faithfully,
+Ishaan Bajaj
+
+── BIO-DATA ──────────────────────────
+Name       : Ishaan Bajaj
+Class      : XII Science, DPS New Delhi
+Skills     : Photoshop, Illustrator, Canva
+Certificates: Adobe Certified Associate (2025)
+Portfolio  : behance.net/ishaandesigns
+Contact    : 9810056789</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq6">
+    <div class="qa-q" onclick="toggleQA('lq6')">
+      <span class="qa-qbadge">Q6</span>
+      <p>Aapke school ke paas ek construction chal rahi hai jiske karan bahut shor aur dhool hai — padhne mein mushkil hoti hai. Editor ko letter likhein. <span class="year-badge">Board 2022</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">H-4, Pitampura
+New Delhi — 110034
+15 November 2026
+
+The Editor
+The Times of India
+New Delhi — 110001
+
+Subject: Noise and Dust Pollution Due to Construction Near Schools
+
+Respected Sir/Ma'am,
+
+I am a student of Class XII studying near a major construction site in Pitampura. Through your esteemed newspaper, I wish to draw attention to the extreme noise and dust pollution caused by this ongoing construction, which is severely affecting our studies.
+
+The noise of heavy machinery during school hours makes it impossible to concentrate. The dust has also led to respiratory problems among several students and teachers. Despite complaints to local authorities, no action has been taken.
+
+I urge the authorities to enforce strict timing regulations for construction near educational institutions and ensure dust barriers are installed. Students' health and education must be a priority.
+
+Yours faithfully,
+Tanvi Mehta</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq7">
+    <div class="qa-q" onclick="toggleQA('lq7')">
+      <span class="qa-qbadge">Q7</span>
+      <p>Shehar mein public transport bahut kam hai — office jaane walon ko bahut dikkat hoti hai. Editor ko problem aur solution dono likhein. <span class="year-badge">Urban Problem</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">F-22, Dwarka Sector-6
+New Delhi — 110075
+3 October 2026
+
+The Editor
+Hindustan Times
+New Delhi — 110001
+
+Subject: Inadequate Public Transport in Dwarka — A Daily Struggle
+
+Respected Sir/Ma'am,
+
+I wish to highlight the severe inadequacy of public transport in Dwarka, New Delhi. Commuters wait for 30–40 minutes for a bus that is almost always overcrowded. The limited frequency of Metro feeder buses forces people to rely on expensive auto-rickshaws.
+
+This not only wastes time but also increases pollution as more people resort to private vehicles. Women and elderly passengers face particular hardship during peak hours.
+
+I request the Delhi Transport Corporation to increase bus frequency on the Dwarka–Connaught Place route and introduce more feeder buses. Real-time bus tracking apps should also be promoted. Efficient public transport is the backbone of any modern city.
+
+Yours faithfully,
+Amit Saxena</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq8">
+    <div class="qa-q" onclick="toggleQA('lq8')">
+      <span class="qa-qbadge">Q8</span>
+      <p>Aap ek content writer ki job ke liye apply karna chahte hain ek digital media company mein. Application with bio-data likhein. <span class="year-badge">Digital Age Job</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">C-9, Vasundhara
+Ghaziabad — 201012
+12 August 2026
+
+The Content Head
+Digital Buzz Media Pvt. Ltd.
+Sector-62, Noida — 201309
+
+Subject: Application for the Post of Content Writer
+
+Respected Sir/Ma'am,
+
+I am writing with reference to your job posting on LinkedIn dated 8 August 2026. I wish to apply for the post of Content Writer in your organisation.
+
+I am a Class XII pass-out from Amity International School with 89% marks in English. I have been blogging on technology and education for two years and have written for my school magazine. I am proficient in SEO writing, social media content and research-based article writing.
+
+I am passionate about words and believe great content can change the world. I have enclosed my bio-data and blog link for your perusal. I would be grateful for the opportunity to contribute to your growing team.
+
+Yours faithfully,
+Nidhi Sharma
+
+── BIO-DATA ──────────────────────────
+Name       : Nidhi Sharma
+Education  : Class XII, 89% — Amity International
+Skills     : Blog Writing, SEO, Canva, MS Office
+Blog       : nidhiwrites.blogspot.com
+Languages  : English, Hindi
+Contact    : 9876501234</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq9">
+    <div class="qa-q" onclick="toggleQA('lq9')">
+      <span class="qa-qbadge">Q9</span>
+      <p>Aapke mohalle mein raat ko bahut zyada cracker bajaye jaate hain — nindra nahi aati, beemar logon ko takleef hoti hai. Editor ko letter likhein. <span class="year-badge">Social Issue</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">J-3, Karol Bagh
+New Delhi — 110005
+22 October 2026
+
+The Editor
+The Hindu
+New Delhi — 110001
+
+Subject: Noise Pollution from Firecrackers — A Growing Nuisance
+
+Respected Sir/Ma'am,
+
+Through the columns of your esteemed newspaper, I wish to draw attention to the increasing menace of firecracker bursting in residential areas, particularly during late night hours in our locality.
+
+Despite the Supreme Court's ban on high-decibel crackers and its order restricting their use to specific hours, firecrackers are burst well past midnight. This disturbs the sleep of infants, patients and the elderly. The air quality deteriorates severely, aggravating asthma and other respiratory conditions among residents.
+
+I urge the local police to strictly enforce the court's orders and impose heavy fines on violators. Public awareness campaigns about the health hazards of noise and air pollution should also be conducted.
+
+Yours faithfully,
+Rekha Verma</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="lq10">
+    <div class="qa-q" onclick="toggleQA('lq10')">
+      <span class="qa-qbadge">Q10</span>
+      <p>Neeche diye gaye data ko dekhkar "The Editor, The Hindu" ko letter likhein — Delhi mein road accidents ke badhte cases ke baare mein suggestions dein. <span class="year-badge">Visual Input 2026 ⭐</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div style="background:#fff3ee;border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:var(--ink2)">
+          <strong style="color:var(--accent1)">📊 Data given in question (Visual Input):</strong><br>
+          Delhi Road Accidents — 2022: 5,400 | 2023: 6,100 | 2024: 6,800 | 2025: 7,500<br>
+          Main Causes: Over-speeding (42%), Drunk Driving (28%), Phone Use (18%), Others (12%)<br>
+          Age Group Most Affected: 18–35 years (68% of all victims)
+        </div>
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">C-22, Dwarka Sector-10
+New Delhi — 110075
+12 March 2026
+
+The Editor
+The Hindu
+New Delhi — 110001
+
+Subject: Alarming Rise in Road Accidents in Delhi — Need for Action
+
+Respected Sir/Ma'am,
+
+Through the columns of your esteemed newspaper, I wish to draw attention to the disturbing rise in road accidents in Delhi. As per available data, accident cases have jumped from 5,400 in 2022 to 7,500 in 2025 — an increase of nearly 39% in just three years.
+
+The data reveals that over-speeding and drunk driving together account for 70% of all accidents. Most alarmingly, the 18–35 age group — our youth — comprises 68% of victims. Strict enforcement of traffic rules is clearly missing.
+
+I urge the authorities to install more speed cameras, impose heavier penalties for drunk driving and phone use while driving, and launch aggressive awareness campaigns in schools and colleges.
+
+Thanking you,
+Yours faithfully,
+Rahul Verma</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Visual input wale questions mein <strong>data ka reference zaroor do</strong> — jaise "as per the data", "the figures show" — tabhi marks milenge. Sirf general likhne se marks kate jaate hain.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- =================== ARTICLE WRITING =================== -->
+<div class="section-wrap" id="article">
+  <div class="section-head">
+    <div class="sec-icon" style="background:#e8fff6">📰</div>
+    <div>
+      <h2 style="color:var(--article-c)">Article Writing</h2>
+      <p>120–150 words · Descriptive ya Analytical</p>
+    </div>
+  </div>
+
+  <div class="format-card" id="fc-article">
+    <div class="format-header" onclick="toggleCard('fc-article')">
+      <div class="fh-left">
+        <span class="fh-tag" style="background:#e8fff6;color:var(--article-c)">FORMAT</span>
+        <div>
+          <h3>Article ka Sahi Structure</h3>
+          <small>Catchy title se strong conclusion tak</small>
+        </div>
+      </div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="format-body">
+      <div class="inner-tabs">
+        <div class="itab active" onclick="switchTab(this,'article','steps')">Steps</div>
+        <div class="itab" onclick="switchTab(this,'article','diff')">Article vs Report</div>
+        <div class="itab" onclick="switchTab(this,'article','tips')">Tips</div>
+      </div>
+      <div class="tab-content active" id="article-steps">
+        <ul class="steps-list">
+          <li><span class="step-num" style="background:#e8fff6;color:var(--article-c)">1</span><span><strong>TITLE</strong> — Bold, catchy, centre-aligned. Jaise: "Social Media: Boon or Bane?"</span></li>
+          <li><span class="step-num" style="background:#e8fff6;color:var(--article-c)">2</span><span><strong>By [Aapka Naam]</strong> — Naam neeche likhein, ek line mein</span></li>
+          <li><span class="step-num" style="background:#e8fff6;color:var(--article-c)">3</span><span><strong>Introduction (Hook)</strong> — Ek strong opening line, reader ko pakad lo</span></li>
+          <li><span class="step-num" style="background:#e8fff6;color:var(--article-c)">4</span><span><strong>Body Para 1</strong> — Issue/Topic explain karo, facts ya data doon</span></li>
+          <li><span class="step-num" style="background:#e8fff6;color:var(--article-c)">5</span><span><strong>Body Para 2</strong> — Different angles, examples, impact</span></li>
+          <li><span class="step-num" style="background:#e8fff6;color:var(--article-c)">6</span><span><strong>Conclusion</strong> — Opinion ya call to action. Memorable line se khatam karo</span></li>
+        </ul>
+      </div>
+      <div class="tab-content" id="article-diff">
+        <div class="tip-box-grid">
+          <div class="tip-box" style="border-color:var(--article-c)"><h4 style="color:var(--article-c)">📰 Article</h4><p>Opinion + Analysis. Writer ki apni soch. "I believe...", "In my opinion..." allowed hai.</p></div>
+          <div class="tip-box" style="border-color:var(--report-c)"><h4 style="color:var(--report-c)">📊 Report</h4><p>Sirf facts. Third person mein. "The event was held...", "It was reported..."</p></div>
+          <div class="tip-box"><h4>📝 Article Format</h4><p>Title → By Name → 3 paras. Persuasive ya informative ho sakta hai.</p></div>
+          <div class="tip-box"><h4>📋 Report Format</h4><p>Headline → Byline → Dateline → Body. News style mein. Objective.</p></div>
+        </div>
+      </div>
+      <div class="tab-content" id="article-tips">
+        <div class="tip-box-grid">
+          <div class="tip-box"><h4>🎣 Hook Opening</h4><p>Question se shuru karo, ya shocking fact se: "Did you know India produces 9.4 million tonnes of plastic every year?"</p></div>
+          <div class="tip-box"><h4>💬 Language</h4><p>Expressive but formal. "Furthermore," "However," "It is evident that" jaise connectors use karo.</p></div>
+          <div class="tip-box"><h4>🔢 Figures</h4><p>Statistics se article zyada convincing lagta hai. Koi bhi relevant data zaroor daalein.</p></div>
+          <div class="tip-box"><h4>📏 Word Count</h4><p>120–150 words mein rakho. Title aur "By Name" count hota hai, dhyan rakho.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 10px">Board Exam Questions</p>
+
+  <div class="qa-card" id="arq1">
+    <div class="qa-q" onclick="toggleQA('arq1')">
+      <span class="qa-qbadge">Q1</span>
+      <p>"Importance of Digital Literacy in Modern India" — is topic par ek article likhein Ananya/Arjun ke naam se. <span class="year-badge">Board 2024</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">DIGITAL LITERACY: THE NEED OF THE HOUR
+
+By Ananya Sharma
+
+In a world where 5G networks are transforming lives, millions of Indians still cannot use a smartphone safely. Digital literacy is no longer a luxury — it is a survival skill.
+
+India has over 900 million internet users today, yet digital fraud, fake news and cyberbullying continue to rise. The root cause is the lack of digital education, especially in rural areas and among older generations. People fall prey to scams simply because they do not understand how the internet works.
+
+The government's Digital India initiative is a step forward, but it must reach the grassroots level. Schools must include digital literacy as a compulsory subject from Class VI. Only an informed citizen can be a safe citizen.
+
+As future leaders, we must bridge this digital divide before it becomes irreversible.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 <strong>Word count:</strong> ~148 words. Hook opening, 3 strong paras, powerful ending — full marks worthy!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq2">
+    <div class="qa-q" onclick="toggleQA('arq2')">
+      <span class="qa-qbadge">Q2</span>
+      <p>"Social Media: Friend or Foe for Students?" — Rahul/Riya ke naam se article likhein. <span class="year-badge">Most Expected 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">SOCIAL MEDIA: FRIEND OR FOE FOR STUDENTS?
+
+By Riya Kapoor
+
+Can you imagine a day without Instagram, YouTube or WhatsApp? For today's students, social media is as natural as breathing. But is it helping us grow — or quietly pulling us down?
+
+Social media connects us to the world, enables learning through YouTube tutorials, and allows creative expression like never before. Many students have built careers through platforms like Instagram and LinkedIn. It is a powerful tool when used wisely.
+
+However, excessive use leads to screen addiction, poor concentration and comparison anxiety. Studies show that students who spend more than three hours daily on social media score lower in academics. Cyberbullying is another serious threat.
+
+The solution is not to ban social media but to teach responsible usage. With the right balance, social media can be our greatest ally in this digital age.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq3">
+    <div class="qa-q" onclick="toggleQA('arq3')">
+      <span class="qa-qbadge">Q3</span>
+      <p>"Environment aur Hum: Hamari Zimmedari" — Environmental pollution par article likhein. <span class="year-badge">2022 Board</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">OUR PLANET, OUR RESPONSIBILITY
+
+By Vikram Mehta
+
+The earth does not belong to us — we belong to the earth. Yet, in just 200 years of industrialisation, we have done more damage than nature could repair in centuries.
+
+Air pollution, deforestation, plastic waste and global warming are no longer distant threats — they are our everyday reality. Delhi's AQI regularly crosses 400. Glaciers are melting. Species are going extinct. And we, the most intelligent species, are responsible.
+
+The good news is that change is possible. Planting trees, reducing single-use plastic, using public transport and saving electricity are small steps with massive impact. Schools, families and governments must work together.
+
+We are the last generation that can reverse this damage. The choice is simple: act now, or leave a broken planet for our children. Let us choose wisely.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq4">
+    <div class="qa-q" onclick="toggleQA('arq4')">
+      <span class="qa-qbadge">Q4</span>
+      <p>"Mental Health of Teenagers in India — Why Are We Ignoring It?" — is topic par ek article likhein. <span class="year-badge">Most Expected 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">SILENT STORM: THE MENTAL HEALTH CRISIS AMONG TEENAGERS
+
+By Aarav Joshi
+
+Every day, a teenager somewhere in India goes to school carrying not just a bag, but a weight no one can see — anxiety, loneliness, and the crushing pressure to succeed. Yet we hardly talk about it.
+
+India has one of the highest rates of student suicide in the world. According to NCRB data, over 13,000 students ended their lives in a single year. Board exams, social media comparison, family pressure and a lack of emotional support are the silent killers. Schools have counsellors on paper but rarely in practice.
+
+We must break the stigma around mental health. Therapy is not weakness — it is wisdom. Every school must have a trained counsellor. Parents must learn to listen, not just guide.
+
+Our children are not robots. They are human beings who need compassion as much as coaching.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 NCRB data mention karna — examiner ko dikhata hai ki aap informed hain. Statistics use karo!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq5">
+    <div class="qa-q" onclick="toggleQA('arq5')">
+      <span class="qa-qbadge">Q5</span>
+      <p>"Online Education: Kya Yeh Classroom Ka Sahi Replacement Hai?" — Priya ke naam se article likhein. <span class="year-badge">Post-COVID Topic</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">ONLINE EDUCATION: BRIDGE OR BARRIER?
+
+By Priya Verma
+
+The COVID-19 pandemic forced the world's classrooms onto small screens overnight. Millions of students attended school in pyjamas. But now that the dust has settled, we must ask: was online education truly effective?
+
+There are undeniable advantages. Students from remote areas could access quality education through platforms like DIKSHA and SWAYAM. Self-paced learning gave students control over their time. Teachers became more tech-savvy. These are real gains.
+
+However, the digital divide is equally real. Nearly 40% of India's students lacked a smartphone or stable internet during the pandemic. The social development that a classroom provides — friendships, debates, team projects — cannot be replicated on a screen. Screen fatigue and reduced attention spans are well-documented consequences.
+
+Online education is a powerful supplement but can never fully replace the classroom. The future lies in blending both — thoughtfully, not forcefully.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq6">
+    <div class="qa-q" onclick="toggleQA('arq6')">
+      <span class="qa-qbadge">Q6</span>
+      <p>"Women's Safety in India — Whose Responsibility Is It?" — Sneha ke naam se analytical article likhein. <span class="year-badge">Board 2023</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">SAFE STREETS: A RIGHT, NOT A PRIVILEGE
+
+By Sneha Gupta
+
+It is 2026. A woman in India still checks her phone every two minutes while walking home at night. Something is deeply wrong.
+
+Women's safety is not a women's problem — it is a societal failure. According to NCRB 2024, a crime against a woman is reported every three minutes in India. Poor street lighting, inadequate policing, and deeply ingrained patriarchal attitudes create an environment of fear.
+
+The responsibility lies everywhere. Governments must install CCTVs and improve police patrolling. Schools must teach boys about respect and consent. Families must stop restricting daughters and start educating sons. Women must be encouraged to report crimes without fear of shame.
+
+Safety is not about restricting women's freedom — it is about expanding it. A nation where half its population lives in fear can never truly progress.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq7">
+    <div class="qa-q" onclick="toggleQA('arq7')">
+      <span class="qa-qbadge">Q7</span>
+      <p>"Reading Books vs Watching Reels — Kaun Behtar Hai?" — Rohan ke naam se article likhein comparing both. <span class="year-badge">Trending 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">BOOKS VS REELS: THE BATTLE FOR YOUR ATTENTION
+
+By Rohan Kapoor
+
+Swipe. Like. Swipe again. If this is your daily routine, you are not alone — but you might be losing something precious.
+
+In an era where thirty-second videos dominate our evenings, books are gathering dust. Yet the benefits of reading are scientifically proven: improved vocabulary, better concentration, reduced stress, and deeper critical thinking. A book demands your complete attention and rewards you with knowledge that lasts a lifetime.
+
+Reels, on the other hand, offer instant entertainment. They can be informative and creative. But the constant dopamine rush trains our brains to crave stimulation every few seconds, making sustained focus increasingly difficult.
+
+The answer is not to choose one over the other but to be intentional. Read for thirty minutes every day before you scroll. Your future self will thank you for choosing depth over distraction.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq8">
+    <div class="qa-q" onclick="toggleQA('arq8')">
+      <span class="qa-qbadge">Q8</span>
+      <p>"The Importance of Voting — Why Every Vote Matters" — school magazine ke liye article likhein Ananya ke naam se. <span class="year-badge">Civic Theme</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">YOUR VOTE, YOUR VOICE, YOUR FUTURE
+
+By Ananya Singh
+
+In 2024, India conducted the world's largest election. Over 640 million votes were cast. Yet millions of young Indians stayed home, saying "my vote doesn't matter." Nothing could be further from the truth.
+
+Democracy is not a spectator sport. Every vote shapes local governance — roads, schools, hospitals, jobs. Many elections in India have been decided by margins of fewer than 500 votes. Your single vote can tip the scales.
+
+The right to vote was not given freely — it was won through decades of struggle. Choosing not to vote is not a neutral act; it silently empowers others to decide your future for you.
+
+As first-time voters, our generation must vote with awareness, not emotion. Research candidates, understand policies, and then vote. Because the leaders we choose today will build — or break — the India we inherit tomorrow.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="arq9">
+    <div class="qa-q" onclick="toggleQA('arq9')">
+      <span class="qa-qbadge">Q9</span>
+      <p>Neeche diye gaye data ke aadhar par "Social Media Usage Among Indian Students" par ek analytical article likhein. <span class="year-badge">Visual Input ⭐ Analytical</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div style="background:#e8fff6;border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:var(--ink2)">
+          <strong style="color:var(--article-c)">📊 Data given in question (Visual/Verbal Input):</strong><br>
+          Survey of 1,000 Indian students (Class IX–XII), 2025:<br>
+          • 78% use social media 3+ hours daily<br>
+          • 45% report disturbed sleep due to late-night phone use<br>
+          • 62% say social media helps in learning (YouTube, educational pages)<br>
+          • 38% have experienced cyberbullying or online harassment<br>
+          • Only 12% have received formal digital literacy education in school
+        </div>
+        <div class="ans-label">✦ SAMPLE ANSWER (Analytical)</div>
+        <div class="sample-box">STUDENTS AND SOCIAL MEDIA: WHAT THE DATA TELLS US
+
+By Aditya Rajan
+
+Numbers rarely lie. A 2025 survey of 1,000 Indian students reveals a startling truth: 78% spend over three hours daily on social media, yet only 12% have received any formal digital literacy education. The gap between use and understanding is dangerous.
+
+The data presents a complex picture. On one hand, 62% of students find social media genuinely helpful for learning — YouTube tutorials, educational Instagram accounts and study groups have become legitimate tools. On the other, 45% report disturbed sleep, and 38% have faced cyberbullying. Clearly, the same platform empowers and harms simultaneously.
+
+The solution lies not in restriction but in education. When nearly four in ten students face online harassment and schools remain silent, something is deeply wrong. Digital literacy must become a compulsory part of the curriculum — not optional, not occasional.
+
+Data does not ask for opinions. It asks for action.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 <strong>Analytical article kaise pehchane:</strong> Sirf story ya description nahi — <em>data interpret karo</em>, pattern dhundho, argument banao. "The data presents", "The figures suggest" jaise phrases use karo.</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="section-wrap" id="report">
+  <div class="section-head">
+    <div class="sec-icon" style="background:#fff8e6">📊</div>
+    <div>
+      <h2 style="color:var(--report-c)">Report Writing</h2>
+      <p>120–150 words · Event ya Incident · News Style</p>
+    </div>
+  </div>
+
+  <div class="format-card" id="fc-report">
+    <div class="format-header" onclick="toggleCard('fc-report')">
+      <div class="fh-left">
+        <span class="fh-tag" style="background:#fff8e6;color:var(--report-c)">FORMAT</span>
+        <div>
+          <h3>Report ka News Style Format</h3>
+          <small>Journalist ki tarah likhna seekho</small>
+        </div>
+      </div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="format-body">
+      <div class="inner-tabs">
+        <div class="itab active" onclick="switchTab(this,'report','steps')">Steps</div>
+        <div class="itab" onclick="switchTab(this,'report','template')">Template</div>
+        <div class="itab" onclick="switchTab(this,'report','tips')">Tips</div>
+      </div>
+      <div class="tab-content active" id="report-steps">
+        <ul class="steps-list">
+          <li><span class="step-num" style="background:#fff8e6;color:var(--report-c)">1</span><span><strong>HEADLINE</strong> — Bold, news-style. Jaise: "Annual Sports Day Celebrated with Great Enthusiasm"</span></li>
+          <li><span class="step-num" style="background:#fff8e6;color:var(--report-c)">2</span><span><strong>By-line</strong> — "By [Aapka Naam] | [City], [Date]"</span></li>
+          <li><span class="step-num" style="background:#fff8e6;color:var(--report-c)">3</span><span><strong>Opening line</strong> — Sabse important info pehle — What happened, where, when</span></li>
+          <li><span class="step-num" style="background:#fff8e6;color:var(--report-c)">4</span><span><strong>Body</strong> — Details: participants, activities, highlights, quotes (optional)</span></li>
+          <li><span class="step-num" style="background:#fff8e6;color:var(--report-c)">5</span><span><strong>Conclusion</strong> — Vote of thanks, overall tone, closing line</span></li>
+        </ul>
+        <div class="tip-box" style="margin-top:10px"><h4>⚠️ Yaad rakho</h4><p>Report hamesha <strong>third person</strong> mein likhein. "The event was held...", "It was attended by..." — "I" ka use kabhi mat karo.</p></div>
+      </div>
+      <div class="tab-content" id="report-template">
+        <div class="sample-box">HEADLINE: EVENT KA NAAM CLEARLY LIKHO
+
+By [Aapka Naam] | [City], [Date]
+
+[Opening line: What happened, where, when — ek sentence mein sab kuch]
+
+[Para 1: Event ka description — kaun aaya, kya hua, highlights]
+
+[Para 2: Main activities ya competitions, winners ya achievements]
+
+[Para 3: Chief guest ka address ya quote, vote of thanks]
+
+The event concluded [with / on a...] note, leaving all participants [inspired / motivated / entertained].</div>
+      </div>
+      <div class="tab-content" id="report-tips">
+        <div class="tip-box-grid">
+          <div class="tip-box"><h4>📰 5 W's</h4><p>Who, What, When, Where, Why — yeh sab cover karna zaroori hai.</p></div>
+          <div class="tip-box"><h4>🚫 No "I"</h4><p>Report mein kabhi "I attended" mat likho. Hamesha third person.</p></div>
+          <div class="tip-box"><h4>⏰ Past Tense</h4><p>Har verb past tense mein hoga — "was held", "were present", "delivered".</p></div>
+          <div class="tip-box"><h4>💬 Quote</h4><p>Chief guest ka ek quote daalein agar possible ho — marks milenge.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 10px">Board Exam Questions</p>
+
+  <div class="qa-card" id="rq1">
+    <div class="qa-q" onclick="toggleQA('rq1')">
+      <span class="qa-qbadge">Q1</span>
+      <p>Aap school ke correspondent hain. Annual Science Exhibition ka report likhein jo school mein huaa. <span class="year-badge">Board 2023</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">ANNUAL SCIENCE EXHIBITION DAZZLES STUDENTS AND PARENTS
+
+By Priya Sharma | New Delhi, 15 September 2026
+
+The Annual Science Exhibition of Sunrise Public School, New Delhi was held on 14 September 2026 in the school auditorium. The event was inaugurated by Dr. R.K. Mishra, a noted scientist from IIT Delhi.
+
+Over 200 students from Classes IX to XII participated by setting up 65 innovative projects on themes such as renewable energy, artificial intelligence and environmental conservation. The project "Solar Purifier" by Class XII students won the Best Project award for its cost-effective design.
+
+Dr. Mishra addressed the gathering and encouraged students to pursue research. "Science is not just a subject — it is a way of thinking," he remarked.
+
+The exhibition concluded with a prize distribution ceremony. Principal Mrs. Anita Gupta thanked all participants and expressed pride in the students' creativity and dedication.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 <strong>Check karo:</strong> Headline ✓ By-line ✓ Third person ✓ Past tense ✓ Quote ✓ 5 W's ✓</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq2">
+    <div class="qa-q" onclick="toggleQA('rq2')">
+      <span class="qa-qbadge">Q2</span>
+      <p>Aapke school mein "Fit India Week" manaya gaya. Report likhein. <span class="year-badge">Most Expected 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">FIT INDIA WEEK PROMOTES HEALTH AND WELLNESS
+
+By Rohit Jain | Noida, 10 January 2026
+
+Sunrise Vidya Niketan, Noida organised 'Fit India Week' from 5 to 10 January 2026 to promote physical fitness and a healthy lifestyle among students.
+
+A range of activities were organised during the week, including yoga sessions, marathon runs, nutritional awareness talks and team sports. More than 500 students actively participated in these events. The highlight was a 5-km marathon held on the final day in which students from all classes took part enthusiastically.
+
+The Chief Guest, Dr. Sonal Mehta, a sports nutritionist, addressed the students and emphasised the importance of regular exercise and a balanced diet. "A healthy student is a successful student," she said.
+
+The week-long event concluded with a prize distribution ceremony. The school management appreciated the students' participation and pledged to make such programmes a regular feature.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq3">
+    <div class="qa-q" onclick="toggleQA('rq3')">
+      <span class="qa-qbadge">Q3</span>
+      <p>School mein road safety awareness programme hua. Trafficpol ke adhikari aaye the. Report likhein. <span class="year-badge">2022 Board</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">ROAD SAFETY AWARENESS PROGRAMME HELD AT CITY SCHOOL
+
+By Neha Sinha | Delhi, 20 February 2026
+
+City Public School, Dwarka organised a Road Safety Awareness Programme on 19 February 2026 in collaboration with the Delhi Traffic Police. The event was held in the school auditorium and was attended by students of Classes IX to XII.
+
+Traffic Inspector Mr. Rajiv Sharma delivered an informative talk on the importance of following traffic rules, wearing helmets and seatbelts, and avoiding mobile phone use while driving. An interactive quiz was also held in which students participated enthusiastically.
+
+A short documentary on road accidents and their causes was screened, which left a deep impression on the audience. Students pledged to be responsible road users and to spread awareness in their communities.
+
+The programme was appreciated by all. Principal Mrs. Sudha Rao thanked the traffic department for their guidance and hoped for more such collaborative initiatives in the future.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq4">
+    <div class="qa-q" onclick="toggleQA('rq4')">
+      <span class="qa-qbadge">Q4</span>
+      <p>Aapke school mein "Inter-School Debate Competition" hua jisme aapke school ne pratham puraskaar jeeta. Report likhein. <span class="year-badge">Board 2024</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">SUNRISE SCHOOL WINS INTER-SCHOOL DEBATE TROPHY
+
+By Kavya Sharma | Delhi, 12 March 2026
+
+Sunrise Public School, Rohini clinched the first prize at the Inter-School Debate Competition organised by the Delhi Education Society on 11 March 2026 at Madan Mohan Malviya Hall, New Delhi.
+
+Twelve schools from across the city participated in the event. The topic of debate was "Artificial Intelligence: A Threat or an Opportunity?" Students delivered powerful, well-researched arguments on both sides. The audience was held spellbound by the quality of speech and reasoning.
+
+Ananya Mehta of Class XII represented Sunrise School and won the Best Speaker award for her eloquent and confident delivery. Her argument — that AI is only as dangerous as the humans who control it — won wide appreciation from the judges.
+
+The trophy was received by Principal Dr. R.K. Sharma, who congratulated the students and the debate club mentor, Mrs. Sunita Rao, for their dedication and hard work.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Winner ka naam, topic, school ka naam aur judge ka reaction — yeh sab dalne se report rich lagti hai.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq5">
+    <div class="qa-q" onclick="toggleQA('rq5')">
+      <span class="qa-qbadge">Q5</span>
+      <p>School mein "Career Counselling Seminar" raka gaya jisme IIT aur IIM ke alumni aaye the. Report likhein. <span class="year-badge">New Pattern 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">CAREER COUNSELLING SEMINAR LIGHTS UP STUDENTS' FUTURES
+
+By Arjun Nair | Noida, 5 February 2026
+
+A Career Counselling Seminar was held at Lotus Valley International School, Noida on 4 February 2026, drawing over 300 students of Classes XI and XII and their parents.
+
+The seminar was graced by four distinguished alumni — two from IIT Delhi and two from IIM Ahmedabad — who shared their experiences and guidance on engineering, management, medicine and civil services. Interactive sessions on entrance exam preparation, skill development and foreign education opportunities were conducted throughout the day.
+
+Mr. Vikram Singhania, an IIT alumnus and entrepreneur, urged students to "follow curiosity, not just rankings." His words resonated deeply with the audience. A one-on-one mentoring session was also organised in which students could personally interact with the speakers.
+
+The event was declared highly successful by the management. School Principal Mrs. Deepa Mehra thanked the alumni and announced similar sessions every semester.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq6">
+    <div class="qa-q" onclick="toggleQA('rq6')">
+      <span class="qa-qbadge">Q6</span>
+      <p>School mein Tree Plantation Drive aayojit ki gayi jisme 200 trees lagaye gaye. District Collector chief guest the. Report likhein. <span class="year-badge">Environment Theme</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">200 TREES PLANTED AS SCHOOL LEADS GREEN REVOLUTION
+
+By Priya Malhotra | Gurugram, 20 July 2026
+
+GD Goenka Public School, Gurugram organised a grand Tree Plantation Drive on the occasion of Van Mahotsav on 18 July 2026. Over 200 saplings were planted across the school campus and nearby public areas.
+
+The drive was inaugurated by District Collector Mr. Sanjeev Arora, who planted the first sapling and called upon students to be the true "Green Ambassadors" of their community. Students, teachers and parents participated enthusiastically. Each student adopted one sapling and pledged to water and protect it throughout the year.
+
+The Biology Department set up stalls displaying the importance of biodiversity and the dangers of deforestation. Students signed a "Plant a Tree, Save a Life" pledge card.
+
+The Principal, Mr. Ashok Verma, expressed pride in the school's commitment to environmental responsibility and announced that this drive would be held annually.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq7">
+    <div class="qa-q" onclick="toggleQA('rq7')">
+      <span class="qa-qbadge">Q7</span>
+      <p>School mein "Anti-Drug Awareness Rally" aayojit ki gayi. Students ne shehar mein march kiya. Report likhein. <span class="year-badge">Social Issue</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">STUDENTS MARCH AGAINST DRUGS IN POWERFUL AWARENESS RALLY
+
+By Rohan Verma | Chandigarh, 26 June 2026
+
+On the occasion of International Day Against Drug Abuse, St. Stephen's School, Chandigarh organised an Anti-Drug Awareness Rally on 26 June 2026. More than 400 students, teachers and NCC cadets participated in the event.
+
+The rally began at the school premises and passed through the main market area, covering approximately three kilometres. Students carried placards and banners with powerful messages such as "Say No to Drugs, Say Yes to Life" and "Choose Health, Not Habit."
+
+Deputy Commissioner of Police, Ms. Rekha Nair, flagged off the rally and addressed the gathering, emphasising that drug abuse is one of the greatest threats facing youth today. She urged students to be vigilant and support friends who may be struggling.
+
+The rally concluded with a pledge ceremony. Principal Fr. Joseph D'Souza commended the students for their awareness and civic spirit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq8">
+    <div class="qa-q" onclick="toggleQA('rq8')">
+      <span class="qa-qbadge">Q8</span>
+      <p>School mein "Digital Detox Day" manaya gaya — poore din koi phone nahi, outdoor activities aur reading. Report likhein. <span class="year-badge">Trending 2026</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">SCHOOL GOES SCREEN-FREE: DIGITAL DETOX DAY A GRAND SUCCESS
+
+By Ishika Roy | Mumbai, 10 October 2026
+
+In a bold and refreshing initiative, Podar International School, Mumbai observed its first-ever "Digital Detox Day" on 8 October 2026. Students were requested to keep all digital devices switched off for the entire school day.
+
+The day was packed with offline activities — storytelling sessions, board games, art and craft, outdoor sports, and group reading. Students initially seemed uneasy without their phones, but soon adapted and appeared visibly relaxed and engaged.
+
+A special session on "The Cost of Screen Addiction" was conducted by child psychologist Dr. Meera Bhat, who shared startling data about the impact of excessive screen time on teenage brains.
+
+At the end of the day, students shared their reflections. "I forgot how much I love reading," said Class XI student Rohit Kapoor. Principal Ms. Swati Joshi announced that the school would celebrate Digital Detox Day every month going forward.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Student ya teacher ka direct quote report ko life deta hai — examiners is cheez ko bahut pasand karte hain!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" id="rq9">
+    <div class="qa-q" onclick="toggleQA('rq9')">
+      <span class="qa-qbadge">Q9</span>
+      <p>School mein "Swachh Bharat Abhiyan" ke tahat cleanliness drive hui. Nearby slum area bhi cover kiya gaya. Report likhein. <span class="year-badge">Govt Scheme Theme</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">SCHOOL STUDENTS CHAMPION CLEANLINESS UNDER SWACHH BHARAT
+
+By Ananya Mehta | Jaipur, 2 October 2026
+
+Inspired by the vision of Mahatma Gandhi on his birth anniversary, students of Maharani Gayatri Devi School, Jaipur carried out an extensive cleanliness drive on 2 October 2026 under the Swachh Bharat Abhiyan.
+
+Over 250 students, equipped with gloves, brooms and garbage bags, cleaned the school premises and extended their efforts to the nearby Govindpura slum area. Students collected plastic waste, cleaned drains and painted slogans promoting cleanliness on public walls.
+
+Ward Councillor Ms. Poonam Choudhary joined the drive and praised the students' commitment. "These young people are the true ambassadors of change," she remarked. A short nukkad natak on cleanliness and hygiene was also performed for slum residents.
+
+The Principal, Mrs. Sarla Devi, expressed pride in the students and urged them to carry this spirit into their daily lives throughout the year.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="qa-card" id="rq10">
+    <div class="qa-q" onclick="toggleQA('rq10')">
+      <span class="qa-qbadge">Q10</span>
+      <p>Neeche diye gaye verbal input ke aadhar par school mein hua "Youth Parliament" ka report likhein. <span class="year-badge">Visual Input 2026 ⭐</span></p>
+      <span class="qa-toggle">+</span>
+    </div>
+    <div class="qa-ans">
+      <div class="qa-ans-inner">
+        <div style="background:#fff8e6;border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:var(--ink2)">
+          <strong style="color:var(--report-c)">📋 Verbal Input (given in question):</strong><br>
+          Event: Youth Parliament · School: DPS, R.K. Puram · Date: 22 February 2026<br>
+          Participants: 80 students from 6 schools · Topic debated: "Should voting age be lowered to 16?"<br>
+          Chief Guest: Sh. Ramesh Bidhuri, MP · Best Speaker: Priya Jain, Class XII, DPS<br>
+          Organized by: Student Council · Duration: 9 am – 2 pm
+        </div>
+        <div class="ans-label">✦ SAMPLE ANSWER</div>
+        <div class="sample-box">YOUTH PARLIAMENT SPARKS DEMOCRATIC SPIRIT AT DPS
+
+By Karan Mehta | New Delhi, 22 February 2026
+
+Delhi Public School, R.K. Puram hosted an Inter-School Youth Parliament on 22 February 2026, organised by the Student Council. The event, held from 9 am to 2 pm, brought together 80 student delegates from six schools across Delhi.
+
+The central debate — "Should the voting age be lowered to 16?" — generated passionate arguments from both sides. Students researched their positions thoroughly and presented their cases with remarkable confidence and clarity. The proceedings were conducted in the style of the Indian Parliament, complete with a Speaker, Deputy Speaker and whips for each house.
+
+Chief Guest Sh. Ramesh Bidhuri, Member of Parliament, inaugurated the event and commended students for their awareness of democratic processes. Priya Jain of Class XII, DPS was awarded the Best Speaker trophy for her articulate arguments in favour of the motion.
+
+The event concluded with a vote of thanks by the Student Council President. Principal Dr. Anita Singh praised the students' preparation and expressed hope that such initiatives would inspire greater civic participation among youth.</div>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px">💡 Verbal input ke <strong>sab points cover karo</strong> — Chief Guest, Best Speaker, date, time, topic — koi bhi chhut gayi toh marks katenge. Checklist banao pehle!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+  <p style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px">WriteRight — Class XII English Board 2026–27</p>
+  <p>GNCT Delhi · English Core Code-301 · Section B · 18 Marks</p>
+  <p style="margin-top:8px">Syllabus: CBSE 2026-27 · All questions board-pattern ke hisaab se hain</p>
+  <p style="margin-top:6px;font-size:11px">v2.0 · Updated: Bio-Data format added · Visual Input questions added · Analytical Article added</p>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ===== SESSION CHECK — Login ke bina content nahi dikhega =====
+(function() {
+  if (!sessionStorage.getItem('wr_loggedin')) {
+    document.body.innerHTML = '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;background:#faf8f4;text-align:center;padding:20px"><div><p style="font-size:18px;font-weight:700;color:#0e0e10;margin-bottom:8px">🔐 Access Required</p><p style="font-size:14px;color:#7a7a8a;margin-bottom:20px">Yeh content sirf paid users ke liye hai.</p><a href="login.html" style="background:#ff6b35;color:#fff;padding:12px 28px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px">Login karein →</a></div></div>';
+  }
+})();
+
+// ===== ACTIVE PILL =====
+function setActive(el) {
+  document.querySelectorAll('.tpill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Auto-color active pill
+document.querySelectorAll('.tpill').forEach((p,i) => {
+  const colors = ['var(--notice-c)','var(--invite-c)','var(--letter-c)','var(--article-c)','var(--report-c)'];
+  p.addEventListener('click', function() {
+    this.style.background = colors[i];
+    document.querySelectorAll('.tpill').forEach((pp,ii) => {
+      if(ii !== i) { pp.style.background = ''; }
+    });
+  });
+});
+// Set initial active color
+document.querySelector('.tpill.active').style.background = 'var(--notice-c)';
+
+// ===== ACCORDION =====
+function toggleCard(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+
+// ===== INNER TABS =====
+function switchTab(el, section, tab) {
+  const parent = el.closest('.format-body');
+  parent.querySelectorAll('.itab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById(section + '-' + tab).classList.add('active');
+}
+
+// ===== Q&A TOGGLE =====
+function toggleQA(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+
+// ===== SCROLL TO TOP =====
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTop');
+  if(window.scrollY > 300) btn.classList.add('show');
+  else btn.classList.remove('show');
+});
+</script>
+</body>
+</html>
